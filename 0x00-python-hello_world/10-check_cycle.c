@@ -1,7 +1,7 @@
 #include "lists.h"
 /**
  * check_cycle - checks for a cysle in a singly linked list
- * @lists: lsit of type listint_t
+ * @list: struct of type listint_t
  *
  * Return: 0 no cycles found, 1 if found
  */
@@ -10,6 +10,8 @@ int check_cycle(listint_t *list)
 	listint_t *current = list;
 	listint_t *test = list;
 
+	if (list == NULL || list->next == NULL)
+		return (0);
 	while (current != NULL && test->next != NULL && test != NULL)
 	{
 		current = current->next;
