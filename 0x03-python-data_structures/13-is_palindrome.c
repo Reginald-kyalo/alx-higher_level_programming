@@ -8,15 +8,16 @@
 int count_nodes(listint_t **head)
 {
 	int size = 0;
+	listint_t *node = *head;
 
-	if (*head == NULL)
+	if (node == NULL)
 	{
 		return (0);
 	}
-	while (*head != NULL)
+	while (node != NULL)
 	{
 		size++;
-		*head = *(head->next);
+		node = (node->next);
 	}
 	return (size);
 }
@@ -32,16 +33,17 @@ int *create_array(listint_t **head, int size)
 {
 	int i = 0;
 	int *array = malloc(size * sizeof(int));
+	listint_t *node = *head;
 
-	if (*head == NULL || array == NULL)
+	if (node == NULL || array == NULL)
 	{
 		return (NULL);
 	}
 	while (i < size)
 	{
-		array[i] = *(head->n);
+		array[i] = (node->n);
 		i++;
-		*head = *(head->next);
+		node = (node->next);
 	}
 	return (array);
 }
