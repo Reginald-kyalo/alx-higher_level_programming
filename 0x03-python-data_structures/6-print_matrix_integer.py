@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+
+
 def print_matrix_integer(matrix=[[]]):
-    for row in range(len(matrix)):
-        print("{:d}".format(row[:]))
+    for i in matrix:
+        print(" ".join("{:d}".format(j) for j in i))
