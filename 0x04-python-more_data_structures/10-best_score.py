@@ -4,6 +4,7 @@ def best_score(a_dictionary):
     max_value = float(-inf)
 
     for key, value in a_dictionary.items():
-        if is value and value >= max_value:
+        if is isinstance(value,int) and value > max_value:
             max_key = key
+            max_value = value
     return max_key
