@@ -56,5 +56,4 @@ def my_print(self):
             print()
             return
         for i in range(self.__size):
-               for j in range(self.__size):
-                   print("#", end=-"")
+            print("".join(["#" for j in range(self.__size)]))
