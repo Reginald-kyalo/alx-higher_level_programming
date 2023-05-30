@@ -1,52 +1,58 @@
 #!/usr/bin/python3
-"""Defines a class Square"""
+""" defines a square """
 
 
 class Square:
-    """Represents a square
-    Attributes:
-        __size (int): size of a side of the square
-    """
+    """ square with private instance attribute size """
+
     def __init__(self, size=0):
-        """initializes the square
+        """
+        initializes square
         Args:
-            size (int): size of a side of the square
-        Returns:
-            None
+            size: size of side of square
         """
-        self.size = size
 
-    def area(self):
-        """calculates the square's area
-        Returns:
-            The area of the square
-        """
-        return (self.__size) ** 2
-
+        if type(size) is int:
+            if size < 0:
+                raise ValueError('size must be >= 0')
+            else:
+                self.size = size
+        else:
+            raise TypeError('size must be an integer')
     @property
     def size(self):
-        """getter of __size
+        """
+        getter of value of size of square
         Returns:
-            The size of the square
+            size of square
         """
         return self.__size
-
     @size.setter
     def size(self, value):
-        """setter of __size
+        """
+        setter of value of __size
         Args:
-            value (int): size of a side of the square
+            value(int): to be set as size
         Returns:
             None
         """
-        if type(value) is not int:
-            raise TypeError("size must be an integer")
-        else:
+        if type(value) is int:
             if value < 0:
-                raise ValueError("size must be >= 0")
+                raise ValueError('size must be >= 0')
             else:
                 self.__size = value
-def my_print(self):
+        else:
+            raise TypeError('size must be an integer')
+
+    def area(self):
+        """
+        finds area of square
+        Returns:
+            the area of the square
+        """
+
+        return self.__size ** 2
+    def my_print(self):
         """
         prints square using '#'
         Returns:
