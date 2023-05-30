@@ -21,7 +21,7 @@ class Square:
     def area(self):
         """ 
         calculates area of defined square
-        Return:
+        Returns:
             area of square
         """
 
