@@ -1,6 +1,4 @@
 #!/usr/bin/python3
-#100-my_int.py
-#Reginald-kyalo
 """Defines a class MyInt that inherits from int."""
 
 
