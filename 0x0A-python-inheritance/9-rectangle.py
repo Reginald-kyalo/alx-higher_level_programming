@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/python3
 #8-rectangle.py
 #Reginald-kyalo
 """defines class rectangle that inherits from basegeometry"""
