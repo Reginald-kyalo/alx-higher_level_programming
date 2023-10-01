@@ -1,9 +1,7 @@
 #!/usr/bin/python3
-#10-square.py
-#Reginald-kyalo
-
 """defines a new class square a sub class of rectangle"""
 Rectangle = __import__('9-Rectangle').Rectangle
+
 
 class Square(Rectangle):
     """represents a square."""
