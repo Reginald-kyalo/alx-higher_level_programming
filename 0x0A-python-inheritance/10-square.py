@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/python3
 #10-square.py
 #Reginald-kyalo
 
