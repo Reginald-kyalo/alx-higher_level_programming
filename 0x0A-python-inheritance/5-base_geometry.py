@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/python3
 #5-base_geometry.py
 #Reginald-kyalo
 """empty class base geometry"""
