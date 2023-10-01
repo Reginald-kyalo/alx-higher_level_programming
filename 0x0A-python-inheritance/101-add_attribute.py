@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/python3
 #101-add_attribute.py
 #Reginald-kyalo
 """Defines a function that adds attributes to objects."""
