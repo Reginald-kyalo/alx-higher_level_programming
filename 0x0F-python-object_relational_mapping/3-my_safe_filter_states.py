@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+#lists state name passed as argument safely
 import sys
 import MySQLdb
 
