@@ -2,7 +2,7 @@
 import sys
 import MySQLdb
 
-if __name__ == "main":
+if __name__ == "__main__":
     """establish connection to database"""
     db = MySQLdb.connect(user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3])
     cursor = db.cursor();
