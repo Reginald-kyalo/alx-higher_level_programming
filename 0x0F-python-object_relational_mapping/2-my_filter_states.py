@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+#lists state with name Arizona passed as argument
 import sys
 import MySQLdb
 
