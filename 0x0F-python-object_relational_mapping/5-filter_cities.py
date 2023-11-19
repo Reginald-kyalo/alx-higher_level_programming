@@ -8,6 +8,12 @@ if __name__ == "main":
     cursor = db.cursor();
     city_input = sys.argv[4]
     cursor.execute("SELECT * FROM cities WHERE BINARY `name` = '{city_input}' ORDER BY cities.id ASC")
+    cursor.execute("SELECT `cities`.`id`, `cities`.`name`, `states`.`name` \
+                    FROM `cities` \
+                    WHERE BINARY `name` = '{city_input}' \
+                    INNER JOIN `states` \
+                        ON `cities`.`state`.`id` \
+                    ORDER BY `cities`.`id` ASC")
     states = cursor.fetchall()
 
     for state in states:
