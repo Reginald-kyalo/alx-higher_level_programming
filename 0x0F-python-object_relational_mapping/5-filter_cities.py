@@ -1,23 +1,26 @@
 #!/usr/bin/python3
+"""
+Lists cities in states passed as argument
+from database passed as argument
+"""
 import sys
 import MySQLdb
 
 if __name__ == "__main__":
-    """establish connection to database"""
     db = MySQLdb.connect(user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3])
-    cursor = db.cursor();
+    cursor = db.cursor()
     city_input = sys.argv[4]
-    cursor.execute("SELECT * FROM cities WHERE BINARY `name` = '{city_input}' ORDER BY cities.id ASC")
-    cursor.execute("SELECT `cities`.`id`, `cities`.`name`, `states`.`name` \
-                    FROM `cities` \
-                    WHERE BINARY `name` = '{city_input}' \
-                    INNER JOIN `states` \
-                        ON `cities`.`state`.`id` \
-                    ORDER BY `cities`.`id` ASC")
-    states = cursor.fetchall()
-
-    for state in states:
-        print(state)
+    cursor.execute("SELECT `cities`.`name`\
+                    FROM `cities`\
+                    JOIN `states` ON `cities`.`state_id` = `states`.`id`\
+                    WHERE states.name LIKE %s\
+                    ORDER BY `cities`.`id` ASC", (city_input,))
+    cities = cursor.fetchall()
+    cities_arr = []
+    for row in cities:
+        for col in row:
+            cities_arr.append(col)
+    print((", ").join(cities_arr))
 
     cursor.close()
-    connection.close
+    db.close
