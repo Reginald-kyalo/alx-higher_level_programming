@@ -1,17 +1,21 @@
 #!/usr/bin/python3
-#lists all states from database provided in arguments
+"""
+Lists all states from the database hbtn_0e_0_usa.
+"""
 import sys
 import MySQLdb
 
 if __name__ == "__main__":
     """establish connection to database"""
-    db = MySQLdb.connect(user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3])
-    cursor = db.cursor();
-    cursor.execute("SELECT * FROM `states` ORDER BY states.id ASC")
+    db = MySQLdb.connect(host='localhost', port=3306,
+                         user=sys.argv[1], passwd=sys.argv[2],
+                         db=sys.argv[3])
+    cursor = db.cursor()
+    cursor.execute("SELECT * FROM states ORDER BY id ASC")
     states = cursor.fetchall()
 
     for state in states:
         print(state)
 
     cursor.close()
-    connection.close
+    db.close
