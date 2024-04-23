@@ -6,7 +6,7 @@ if (typeof process.argv[2] === 'string') {
     console.log('Not a number');
   } else {
     console.log('My number:', num);
-}
+  }
 } else if (typeof process.argv[2] === 'number') {
   console.log(Math.floor(process.argv[2]));
 } else {
