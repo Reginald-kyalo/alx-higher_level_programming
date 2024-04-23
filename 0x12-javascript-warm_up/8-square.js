@@ -9,11 +9,11 @@ if (isNaN(num)) {
   console.log('Missing size');
 }
 
-while(num > i) {
+while (num > i) {
   while (j > i) {
-		str += 'X';
-		j--;
-	}
+    str += 'X';
+    j--;
+  }
   console.log(str);
   num -= 1;
 }
