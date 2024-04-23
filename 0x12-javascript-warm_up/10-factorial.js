@@ -3,7 +3,7 @@
 const num = parseInt(process.argv[2], 10);
 
 function factorial (num) {
-  if (isNaN(num) || num === 1){
+  if (isNaN(num) || num === 1) {
     return 1;
   }
   return num * factorial(num - 1);
