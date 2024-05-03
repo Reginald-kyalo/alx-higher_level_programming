@@ -16,10 +16,9 @@ if __name__ == "main":
 
     Session = sessionmaker(bind=engine)
     session = Session()
-
     cities = session.query(City).all()
     for city in cities:
         print(city)
-    
+
     session.commit()
     session.close()
