@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # contains class state
 # inherits from sqlalchemy Base and links to mysql tables
-from sqlalchemy import Column, Integer, String, create_engine
+from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
