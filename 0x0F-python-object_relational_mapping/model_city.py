@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""contains class City
+inherits from sqlalchemy Base and links to mysql tables
+"""
+from sqlalchemy import Column, Integer, String
+from sqlalchemy.ext.declarative import declarative_base
 from model_state import Base, State
 
 """Defines class State"""
