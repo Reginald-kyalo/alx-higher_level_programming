@@ -6,8 +6,11 @@ from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 from model_state import Base, State
 
-"""Defines class State"""
+
 class City(Base):
+    """Defines class State"""
+
+
     __tablename__ = 'cities'
 
     id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
