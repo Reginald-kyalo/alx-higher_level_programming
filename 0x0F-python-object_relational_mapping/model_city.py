@@ -2,8 +2,9 @@
 """contains class City
 inherits from sqlalchemy Base and links to mysql tables
 """
-from sqlalchemy import Column, Integer, String
+from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import relationship
 from model_state import Base, State
 
 
@@ -14,9 +15,6 @@ class City(Base):
 
     id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
     name = Column(String(128), nullable=False)
-    state_id = Column(Integer, nullable=False ForeignKey('states.id'))
+    state_id = Column(Integer, ForeignKey('states.id'), nullable=False)
 
     state = relationship("State", backref="cities")
-
-    def __repr__:
-        return f"{State.name}: ({City.id}) {City.name}"
