@@ -1,7 +1,6 @@
 #!/usr/bin/node
 
 if (process.argv.length <= 2) {
-if (process.argv.length <= 2) {
   console.log(0);
 } else {
   const args = process.argv.slice(2).map(Number);
@@ -12,5 +11,4 @@ if (process.argv.length <= 2) {
     const secondLargest = uniqueArgs.sort((a, b) => b - a)[1];
     console.log(secondLargest);
   }
-}
 }
