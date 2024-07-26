@@ -8,21 +8,6 @@ let j = 2;
 if (process.argv.length === 0 || process.argv.length === 1) {
   console.log(0);
 } else {
-  while (i < process.argv.length) {
-    if (num < process.argv[j]) {
-      num = process.argv[j];
-    }
-    i++;
-    j++;
-  }
-  i = 0;
-  j = 0;
-  while (i < process.argv.length) {
-    if (num2 < process.argv[j] && num2 < num) {
-      num2 = process.argv[j];
-    }
-    i++;
-    j++;
-  }
-  console.log(num2);
+  const num = [...new Set(process.argv)].sort((a, b) => b - a)[1];
+  console.log(num);
 }
