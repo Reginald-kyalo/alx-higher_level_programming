@@ -1,13 +1,14 @@
 #!/usr/bin/node
 
-let num = 0;
-let num2 = 0;
-let i = 0;
-let j = 2;
-
-if (process.argv.length === 0 || process.argv.length === 1) {
+if (process.argv.length <= 2) {
   console.log(0);
 } else {
-  const num = [...new Set(process.argv)].sort((a, b) => b - a)[1];
-  console.log(num);
+  const args = process.argv.slice(2).map(Number);
+  const uniqueArgs = [...new Set(args)];
+  if (uniqueArgs.length === 1) {
+    console.log(uniqueArgs[0]);
+  } else {
+    const secondLargest = uniqueArgs.sort((a, b) => b - a)[1];
+    console.log(secondLargest);
+  }
 }
